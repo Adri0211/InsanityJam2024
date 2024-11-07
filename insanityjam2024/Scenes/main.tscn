@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://did6r3wixds48"]
+[gd_scene load_steps=2 format=3 uid="uid://did6r3wixds48"]
+
+[ext_resource type="PackedScene" uid="uid://bqxanrqciqq2d" path="res://Scenes/arrow.tscn" id="1_qqst8"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Sprite2D" parent="." instance=ExtResource("1_qqst8")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
