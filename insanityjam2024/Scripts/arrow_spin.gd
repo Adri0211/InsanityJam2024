@@ -2,15 +2,20 @@ extends Sprite2D
 
 const ROTATION_SPEED = 0.001
 
+const MAX_VISIBILITY = 100
+const MIN_VISIBILITY = 0
+
 enum { ROTATING, CALCULATING}
 
-@onready var target: Sprite2D = $Target
 
 var state = CALCULATING
 var direction = 1
 var speed = 0
 var time = 0
 var difficulty = 0
+
+var visibility = 100
+var gaining = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -26,6 +31,18 @@ func _process(delta: float) -> void:
 		time = randf()*2+1 * speed
 		state = ROTATING
 		difficulty += 0.5
+		
+	if gaining:
+		if	visibility < MAX_VISIBILITY:
+			visibility += 60 * delta
+			
+	elif !gaining:
+		if visibility > MIN_VISIBILITY:
+			visibility -= 60 * delta
+		
+	modulate.a = visibility/100	
 	
 	# Move target
-	target.position.x = get_global_mouse_position().distance_to(position)
+	# target.position.x = get_global_mouse_position().distance_to(position)
+
+	pass # Replace with function body.
