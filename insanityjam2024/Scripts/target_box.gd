@@ -2,7 +2,13 @@ extends Area2D
 
 @onready var arrow: Sprite2D = $".."
 
+signal game_started
+
 func _on_mouse_entered() -> void:
+	if !arrow.start: 
+		arrow.start = true 
+		game_started.emit()
+		
 	arrow.gaining = true
 
 

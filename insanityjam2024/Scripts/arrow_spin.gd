@@ -16,33 +16,34 @@ var difficulty = 0
 
 var visibility = 100
 var gaining = true
+var start = false
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# Check State and set values
-	if state == ROTATING:
-		rotate(ROTATION_SPEED*direction*speed*difficulty)
-		time -= delta
-		if time < 0:
-			state = CALCULATING
-	elif state == CALCULATING:
-		direction = roundi(randf())*2-1
-		speed = randf()
-		time = randf()*2+1 * speed
-		state = ROTATING
-		difficulty += 0.5
-		
-	if gaining:
-		if	visibility < MAX_VISIBILITY:
-			visibility += 60 * delta
+	if start:
+		if state == ROTATING:
+			rotate(ROTATION_SPEED*direction*speed*difficulty)
+			time -= delta
+			if time < 0:
+				state = CALCULATING
+		elif state == CALCULATING:
+			direction = roundi(randf())*2-1
+			speed = randf()
+			time = randf()*2+1 * speed
+			state = ROTATING
+			difficulty += 0.5
 			
-	elif !gaining:
-		if visibility > MIN_VISIBILITY:
-			visibility -= 60 * delta
-		
-	modulate.a = visibility/100	
+		if gaining:
+			if	visibility < MAX_VISIBILITY:
+				visibility += 60 * delta
+				
+		elif !gaining:
+			if visibility > MIN_VISIBILITY:
+				visibility -= 60 * delta
+			
+		modulate.a = visibility/100
 	
 	# Move target
 	# target.position.x = get_global_mouse_position().distance_to(position)
-
-	pass # Replace with function body.

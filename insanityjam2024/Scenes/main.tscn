@@ -1,9 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://did6r3wixds48"]
+[gd_scene load_steps=3 format=3 uid="uid://did6r3wixds48"]
 
 [ext_resource type="PackedScene" uid="uid://bqxanrqciqq2d" path="res://Scenes/arrow.tscn" id="1_qqst8"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="2_45guy"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Sprite2D" parent="." instance=ExtResource("1_qqst8")]
+[node name="Arrow" parent="." instance=ExtResource("1_qqst8")]
+unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_45guy")
+
+[node name="Timer" type="Timer" parent="GameManager"]
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[connection signal="game_started" from="Arrow/TargetBox" to="GameManager" method="_on_target_box_game_started"]
+[connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
+
+[editable path="Arrow"]

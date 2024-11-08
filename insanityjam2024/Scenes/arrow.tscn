@@ -1,51 +1,91 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqxanrqciqq2d"]
+[gd_scene load_steps=7 format=3 uid="uid://bqxanrqciqq2d"]
 
 [ext_resource type="Texture2D" uid="uid://d1a6e5t0xkn61" path="res://Assets/Sprites/Arrow.png" id="1_krc0e"]
 [ext_resource type="Script" path="res://Scripts/arrow_spin.gd" id="2_7n428"]
-[ext_resource type="Script" path="res://Scenes/target_box.gd" id="3_27jfk"]
+[ext_resource type="Script" path="res://Scripts/target_box.gd" id="3_27jfk"]
 [ext_resource type="Texture2D" uid="uid://cxsctojfbiecw" path="res://Assets/Sprites/target.png" id="3_71ioc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glq5o"]
 size = Vector2(15.968, 16.1238)
 
+[sub_resource type="GDScript" id="GDScript_kkwvw"]
+script/source = "extends Node2D
+
+
+	
+"
+
 [node name="Arrow" type="Sprite2D"]
+position = Vector2(9.53674e-07, -1)
+scale = Vector2(0.574295, 0.604821)
 texture = ExtResource("1_krc0e")
 script = ExtResource("2_7n428")
 
 [node name="TargetBox" type="Area2D" parent="."]
-position = Vector2(337, 0)
-scale = Vector2(28.244, 3.96928)
+position = Vector2(560.688, 3.30677)
+scale = Vector2(55.8953, 3.96928)
 script = ExtResource("3_27jfk")
 
 [node name="TargetSprite" type="Sprite2D" parent="TargetBox"]
-scale = Vector2(1, 1)
 texture = ExtResource("3_71ioc")
 
 [node name="TargetCollider" type="CollisionShape2D" parent="TargetBox"]
 position = Vector2(0.017705, -4.20462e-07)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_glq5o")
 
 [node name="ObstacleSpawner" type="Node2D" parent="."]
 position = Vector2(-194, -1)
+script = SubResource("GDScript_kkwvw")
 
-[node name="Spawner1" type="Sprite2D" parent="ObstacleSpawner"]
-position = Vector2(28, 1)
+[node name="Coord_holders" type="Node2D" parent="ObstacleSpawner"]
+
+[node name="Spawner1" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(51.2162, 4.30677)
 scale = Vector2(4, 4)
 texture = ExtResource("3_71ioc")
 
-[node name="Spawner2" type="Sprite2D" parent="ObstacleSpawner"]
-position = Vector2(-63, 1)
+[node name="Spawner2" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-32.3645, 4.30677)
 scale = Vector2(4, 4)
 texture = ExtResource("3_71ioc")
 
-[node name="Spawner3" type="Sprite2D" parent="ObstacleSpawner"]
-position = Vector2(-153, 1)
+[node name="Spawner3" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-117.687, 4.30677)
 scale = Vector2(4, 4)
 texture = ExtResource("3_71ioc")
 
-[node name="Spawner4" type="Sprite2D" parent="ObstacleSpawner"]
-position = Vector2(-245, 1)
+[node name="Spawner4" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-203.009, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("3_71ioc")
+
+[node name="Spawner5" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-288.331, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("3_71ioc")
+
+[node name="Spawner6" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-375.394, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("3_71ioc")
+
+[node name="Spawner7" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-464.198, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("3_71ioc")
+
+[node name="Spawner8" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-553.003, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("3_71ioc")
+
+[node name="Spawner9" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-638.325, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("3_71ioc")
+
+[node name="Spawner10" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-725.388, 4.30677)
 scale = Vector2(4, 4)
 texture = ExtResource("3_71ioc")
 
