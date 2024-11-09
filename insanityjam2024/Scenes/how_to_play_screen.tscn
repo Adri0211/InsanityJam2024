@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://kjmfowagvt34"]
+
+[ext_resource type="Script" path="res://scripts/how_to_play_screen.gd" id="1_2v3m5"]
+[ext_resource type="Texture2D" uid="uid://cxsctojfbiecw" path="res://Assets/Sprites/target.png" id="2_i5bhb"]
+
+[node name="How_to_Play_screen" type="Node2D"]
+script = ExtResource("1_2v3m5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(2.99085, 3.46089)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -484.0
+offset_top = -270.0
+offset_right = 482.0
+offset_bottom = 271.0
+theme_override_font_sizes/font_size = 80
+text = "THIS LABEL CONTAINS TEXT ON HOW TO PLAY THE GAME TO GUIDE THE PLAYER"
+autowrap_mode = 2
+
+[node name="Go_back_button" type="Button" parent="."]
+offset_left = 256.0
+offset_top = 124.0
+offset_right = 280.0
+offset_bottom = 148.0
+scale = Vector2(6.8, 6.8)
+icon = ExtResource("2_i5bhb")
+
+[connection signal="pressed" from="Go_back_button" to="." method="_on_go_back_button_pressed"]

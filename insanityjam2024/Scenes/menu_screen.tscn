@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm0lup1g2v533"]
+
+[ext_resource type="Script" path="res://Scripts/menu_screen.gd" id="1_a1sud"]
+[ext_resource type="Texture2D" uid="uid://cxsctojfbiecw" path="res://Assets/Sprites/target.png" id="1_mwle2"]
+
+[node name="MenuScreen" type="Node2D"]
+script = ExtResource("1_a1sud")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Start_Button" type="Button" parent="."]
+offset_left = -300.0
+offset_top = 92.0
+offset_right = -276.0
+offset_bottom = 116.0
+scale = Vector2(5.43997, 5.43997)
+action_mode = 0
+icon = ExtResource("1_mwle2")
+
+[node name="Label" type="Label" parent="Start_Button"]
+layout_mode = 0
+offset_left = -31.6178
+offset_top = -40.4414
+offset_right = 52.3822
+offset_bottom = -17.4414
+theme_override_font_sizes/font_size = 16
+text = "start game"
+
+[node name="How_to_Play_Button" type="Button" parent="."]
+offset_left = 300.0
+offset_top = 92.0
+offset_right = 324.0
+offset_bottom = 116.0
+scale = Vector2(5.43997, 5.43997)
+pivot_offset = Vector2(24, 0)
+action_mode = 0
+icon = ExtResource("1_mwle2")
+
+[node name="Label" type="Label" parent="How_to_Play_Button"]
+layout_mode = 0
+offset_left = -54.3092
+offset_top = -48.162
+offset_right = 82.6908
+offset_bottom = 0.838005
+theme_override_constants/line_spacing = -8
+text = "how to play 
+game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="How_to_Play_Button" to="." method="_on_how_to_play_button_pressed"]
