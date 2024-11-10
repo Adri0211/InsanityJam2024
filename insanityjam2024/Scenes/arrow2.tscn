@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4f2y74gbnlqk"]
+
+[ext_resource type="Script" path="res://Scripts/arrow_spin.gd" id="1_xnlpm"]
+[ext_resource type="Texture2D" uid="uid://d1a6e5t0xkn61" path="res://Assets/Sprites/Arrow.png" id="2_c80ma"]
+[ext_resource type="Script" path="res://Scripts/target_box.gd" id="3_uihaa"]
+[ext_resource type="Texture2D" uid="uid://cs2c2lsgykq03" path="res://Assets/Sprites/PointArea.png" id="4_alhbg"]
+[ext_resource type="Texture2D" uid="uid://cxsctojfbiecw" path="res://Assets/Sprites/target.png" id="4_mr2vg"]
+
+[sub_resource type="GDScript" id="GDScript_i4ha5"]
+script/source = "extends Node2D
+
+
+	
+"
+
+[node name="Arrow" type="Node2D"]
+script = ExtResource("1_xnlpm")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_c80ma")
+
+[node name="TargetBox" type="Area2D" parent="."]
+position = Vector2(545, 0)
+scale = Vector2(55, 4)
+script = ExtResource("3_uihaa")
+
+[node name="TargetCollider" type="CollisionPolygon2D" parent="TargetBox"]
+polygon = PackedVector2Array(-8.14545, -12.75, 20, -25.5, 20, 25.5, -8.14545, 12.75)
+
+[node name="Sprite2D" type="Sprite2D" parent="TargetBox/TargetCollider"]
+modulate = Color(1, 1, 1, 0.498039)
+position = Vector2(5.48545, 0)
+scale = Vector2(0.11402, 0.8)
+texture = ExtResource("4_alhbg")
+
+[node name="ObstacleSpawner" type="Node2D" parent="."]
+visible = false
+position = Vector2(-188, -4)
+script = SubResource("GDScript_i4ha5")
+
+[node name="Coord_holders" type="Node2D" parent="ObstacleSpawner"]
+
+[node name="Spawner1" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(51.2162, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("4_mr2vg")
+
+[node name="Spawner2" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-32.3645, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("4_mr2vg")
+
+[node name="Spawner3" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-117.687, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("4_mr2vg")
+
+[node name="Spawner4" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-203.009, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("4_mr2vg")
+
+[node name="Spawner5" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-288.331, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("4_mr2vg")
+
+[node name="Spawner6" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-375.394, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("4_mr2vg")
+
+[node name="Spawner7" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-464.198, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("4_mr2vg")
+
+[node name="Spawner8" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-553.003, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("4_mr2vg")
+
+[node name="Spawner9" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-638.325, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("4_mr2vg")
+
+[node name="Spawner10" type="Sprite2D" parent="ObstacleSpawner/Coord_holders"]
+position = Vector2(-725.388, 4.30677)
+scale = Vector2(4, 4)
+texture = ExtResource("4_mr2vg")
+
+[connection signal="mouse_entered" from="TargetBox" to="TargetBox" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TargetBox" to="TargetBox" method="_on_mouse_exited"]

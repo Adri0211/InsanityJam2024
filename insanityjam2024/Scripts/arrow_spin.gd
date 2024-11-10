@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 const ROTATION_SPEED = 0.001
 
@@ -15,9 +15,8 @@ var time = 0
 var difficulty = 0
 
 var visibility = 100
-var gaining = true
+var gaining = false
 var start = false
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
