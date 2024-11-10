@@ -44,4 +44,5 @@ func _spawn_obstacle(position: Vector2) -> void:
 	obstacles.add_child(obs)
 	
 func _player_died():
-	get_tree().reload_current_scene()
+	# get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
