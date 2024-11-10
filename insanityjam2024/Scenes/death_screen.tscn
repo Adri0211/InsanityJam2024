@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5uoqsyuoaq36"]
 
-[ext_resource type="Script" path="res://Scripts/death_screen.gd" id="1_sl3kb"]
+[ext_resource type="Script" path="res://scripts/death_screen.gd" id="1_m581k"]
 
 [node name="DeathScreen" type="Node2D"]
-script = ExtResource("1_sl3kb")
+script = ExtResource("1_m581k")
 
 [node name="GameOver" type="Label" parent="."]
 anchors_preset = -1

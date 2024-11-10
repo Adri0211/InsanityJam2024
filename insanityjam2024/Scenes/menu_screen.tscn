@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm0lup1g2v533"]
 
-[ext_resource type="Script" path="res://Scripts/menu_screen.gd" id="1_a1sud"]
-[ext_resource type="Texture2D" uid="uid://cxsctojfbiecw" path="res://Assets/Sprites/target.png" id="1_mwle2"]
+[ext_resource type="Script" path="res://scripts/menu_screen.gd" id="1_dqdj1"]
+[ext_resource type="Texture2D" uid="uid://cxsctojfbiecw" path="res://assets/sprites/target.png" id="2_qhrlf"]
 
 [node name="MenuScreen" type="Node2D"]
-script = ExtResource("1_a1sud")
+script = ExtResource("1_dqdj1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -15,7 +15,7 @@ offset_right = -276.0
 offset_bottom = 116.0
 scale = Vector2(5.43997, 5.43997)
 action_mode = 0
-icon = ExtResource("1_mwle2")
+icon = ExtResource("2_qhrlf")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
@@ -35,7 +35,7 @@ offset_bottom = 116.0
 scale = Vector2(5.43997, 5.43997)
 pivot_offset = Vector2(24, 0)
 action_mode = 0
-icon = ExtResource("1_mwle2")
+icon = ExtResource("2_qhrlf")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="."]
