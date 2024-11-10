@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm0lup1g2v533"]
+[gd_scene load_steps=4 format=3 uid="uid://cm0lup1g2v533"]
 
 [ext_resource type="Script" path="res://scripts/menu_screen.gd" id="1_dqdj1"]
 [ext_resource type="Texture2D" uid="uid://cxsctojfbiecw" path="res://assets/sprites/target.png" id="2_qhrlf"]
+[ext_resource type="PackedScene" uid="uid://bu1u7u6pianaa" path="res://scenes/vol_slider.tscn" id="3_gnk0b"]
 
 [node name="MenuScreen" type="Node2D"]
 script = ExtResource("1_dqdj1")
@@ -51,6 +52,37 @@ game"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 229.0
+offset_top = -289.0
+offset_right = 379.0
+offset_bottom = -249.0
+
+[node name="master_volume_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="master_slider" parent="VBoxContainer" instance=ExtResource("3_gnk0b")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="music_volume_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="Music_Slider" parent="VBoxContainer" instance=ExtResource("3_gnk0b")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="sfx_volume_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SFX Volume
+"
+
+[node name="SFX_slider" parent="VBoxContainer" instance=ExtResource("3_gnk0b")]
+layout_mode = 2
+bus_name = "Sfx"
 
 [connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="How_to_Play_Button" to="." method="_on_how_to_play_button_pressed"]
