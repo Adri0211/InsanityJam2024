@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://baus7w23vd53c"]
+
+[ext_resource type="AudioStream" uid="uid://dxpvjiw0yk0rr" path="res://assets/sound/pixel-fight-8-bit-arcade-music-background-music-for-video-208775.mp3" id="1_k531q"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_k531q")
+volume_db = -64.0
+autoplay = true
+bus = &"Music"
