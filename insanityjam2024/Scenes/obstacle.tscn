@@ -1,12 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxetvhf2tyy2u"]
+[gd_scene load_steps=9 format=3 uid="uid://cxetvhf2tyy2u"]
 
-[ext_resource type="Texture2D" uid="uid://cxsctojfbiecw" path="res://Assets/Sprites/target.png" id="1_lo5p6"]
 [ext_resource type="Script" path="res://scripts/death.gd" id="2_nfeqi"]
+[ext_resource type="Texture2D" uid="uid://beit2vwi3t0qp" path="res://Assets/Sprites/Sin título-2.png" id="2_qfmxm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2y6cl"]
+radius = 6.49799
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4j5i"]
+atlas = ExtResource("2_qfmxm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2hpb"]
+atlas = ExtResource("2_qfmxm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40ppl"]
+atlas = ExtResource("2_qfmxm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0gec"]
+atlas = ExtResource("2_qfmxm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7tkl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4j5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2hpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40ppl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0gec")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="obstacle" type="Node2D"]
-scale = Vector2(2.16, 2.16)
+scale = Vector2(2.52, 2.52)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_nfeqi")
@@ -14,7 +51,9 @@ script = ExtResource("2_nfeqi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_2y6cl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-texture = ExtResource("1_lo5p6")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_p7tkl")
+autoplay = "default"
+frame_progress = 0.573767
 
 [connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
