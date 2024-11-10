@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://did6r3wixds48"]
+[gd_scene load_steps=5 format=3 uid="uid://did6r3wixds48"]
 
 [ext_resource type="Texture2D" uid="uid://dvvvqya68xwo0" path="res://assets/sprites/fondo.png" id="1_5mex0"]
 [ext_resource type="PackedScene" uid="uid://b4f2y74gbnlqk" path="res://scenes/arrow2.tscn" id="1_d3rc8"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="2_45guy"]
+[ext_resource type="Script" path="res://scripts/global.gd" id="4_s3l3l"]
 
 [node name="Game" type="Node2D"]
 
@@ -43,6 +44,9 @@ columns = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "0"
+
+[node name="Global" type="Node" parent="CanvasLayer/GridContainer"]
+script = ExtResource("4_s3l3l")
 
 [connection signal="game_started" from="Arrow/TargetBox" to="GameManager" method="_on_target_box_game_started"]
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]

@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 		points_label.text = String.num(roundf(points*10)*10)
 
 func _spawn_obstacle(position: Vector2) -> void:
-	var scene = load("res://Scenes/obstacle.tscn")
+	var scene = load("res://scenes/obstacle.tscn")
 	var obs = scene.instantiate()	
 	obs.translate(position)
 	
@@ -45,4 +45,5 @@ func _spawn_obstacle(position: Vector2) -> void:
 	
 func _player_died():
 	# get_tree().reload_current_scene()
-	get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
+	Global.score = roundf(points*10)*10

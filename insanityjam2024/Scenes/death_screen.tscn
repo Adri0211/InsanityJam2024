@@ -19,7 +19,7 @@ text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Score" type="Label" parent="."]
+[node name="ScoreLabel" type="Label" parent="."]
 anchors_preset = -1
 anchor_right = 0.5
 offset_left = 173.0
