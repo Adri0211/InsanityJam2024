@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxetvhf2tyy2u"]
+[gd_scene load_steps=16 format=3 uid="uid://cxetvhf2tyy2u"]
 
 [ext_resource type="Script" path="res://scripts/death.gd" id="2_nfeqi"]
 [ext_resource type="Texture2D" uid="uid://beit2vwi3t0qp" path="res://Assets/Sprites/Sin título-2.png" id="2_qfmxm"]
+[ext_resource type="Texture2D" uid="uid://cchwk7vp5babu" path="res://Assets/Sprites/explosion_jam.png" id="3_jd56c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2y6cl"]
 radius = 6.49799
@@ -22,6 +23,30 @@ region = Rect2(32, 0, 16, 16)
 atlas = ExtResource("2_qfmxm")
 region = Rect2(16, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxq5v"]
+atlas = ExtResource("3_jd56c")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87yqe"]
+atlas = ExtResource("3_jd56c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxcj4"]
+atlas = ExtResource("3_jd56c")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txu72"]
+atlas = ExtResource("3_jd56c")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4152h"]
+atlas = ExtResource("3_jd56c")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxe3d"]
+atlas = ExtResource("3_jd56c")
+region = Rect2(80, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_p7tkl"]
 animations = [{
 "frames": [{
@@ -40,6 +65,29 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxq5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87yqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxcj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txu72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4152h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxe3d")
+}],
+"loop": true,
+"name": &"explode",
+"speed": 7.0
 }]
 
 [node name="obstacle" type="Node2D"]
@@ -53,7 +101,8 @@ shape = SubResource("CircleShape2D_2y6cl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = SubResource("SpriteFrames_p7tkl")
+animation = &"explode"
 autoplay = "default"
-frame_progress = 0.573767
+frame_progress = 0.507438
 
 [connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
