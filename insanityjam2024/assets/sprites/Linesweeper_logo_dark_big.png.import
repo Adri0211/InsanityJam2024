@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dh7axn3jewhe7"
-path="res://.godot/imported/Linesweeper_logo_dark_big.png-c7c4cb4e65b44c51e994f6ebba0fd07d.ctex"
+path="res://.godot/imported/Linesweeper_logo_dark_big.png-cfc6c9e15813b4660d3381ed19ba2b85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Linesweeper_logo_dark_big.png"
-dest_files=["res://.godot/imported/Linesweeper_logo_dark_big.png-c7c4cb4e65b44c51e994f6ebba0fd07d.ctex"]
+source_file="res://assets/Sprites/Linesweeper_logo_dark_big.png"
+dest_files=["res://.godot/imported/Linesweeper_logo_dark_big.png-cfc6c9e15813b4660d3381ed19ba2b85.ctex"]
 
 [params]
 

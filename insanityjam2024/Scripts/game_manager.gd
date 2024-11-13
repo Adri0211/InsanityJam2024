@@ -6,6 +6,8 @@ extends Node
 @onready var coord_holders = arrow.get_node("ObstacleSpawner").get_node("Coord_holders")
 @onready var obstacles: Node2D = $"../Obstacles"
 @onready var points_label: Label = $"../CanvasLayer/GridContainer/Points_label"
+@onready var camera_2d: Camera2D = $"../Camera2D"
+@onready var node_2d: Node2D = $"../Node2D"
 
 var rng = RandomNumberGenerator.new()
 
@@ -33,7 +35,7 @@ func _process(delta: float) -> void:
 	
 	# Add points
 	if arrow.gaining:
-		points += delta * arrow.position.distance_to(get_viewport().get_mouse_position()) / 100
+		points += delta * arrow.position.distance_to(get_viewport().get_mouse_position()-get_viewport().get_visible_rect().size/2)*2 / 100
 		points_label.text = String.num(roundf(points*10)*10)
 
 func _spawn_obstacle(position: Vector2) -> void:

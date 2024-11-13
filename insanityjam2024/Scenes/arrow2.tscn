@@ -1,10 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4f2y74gbnlqk"]
 
 [ext_resource type="Script" path="res://scripts/arrow_spin.gd" id="1_xnlpm"]
-[ext_resource type="Texture2D" uid="uid://d1a6e5t0xkn61" path="res://Assets/sprites/Arrow.png" id="2_c80ma"]
+[ext_resource type="Texture2D" uid="uid://d1a6e5t0xkn61" path="res://assets/Sprites/Arrow.png" id="2_c80ma"]
 [ext_resource type="Script" path="res://scripts/target_box.gd" id="3_uihaa"]
-[ext_resource type="Texture2D" uid="uid://cs2c2lsgykq03" path="res://Assets/sprites/PointArea.png" id="4_alhbg"]
-[ext_resource type="Texture2D" uid="uid://cxsctojfbiecw" path="res://Assets/sprites/target.png" id="4_mr2vg"]
+[ext_resource type="Texture2D" uid="uid://cs2c2lsgykq03" path="res://assets/Sprites/PointArea.png" id="4_alhbg"]
+[ext_resource type="Texture2D" uid="uid://cxsctojfbiecw" path="res://assets/Sprites/target.png" id="4_mr2vg"]
+
 
 [sub_resource type="GDScript" id="GDScript_i4ha5"]
 script/source = "extends Node2D

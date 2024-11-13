@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://kjmfowagvt34"]
 
 [ext_resource type="Script" path="res://scripts/how_to_play_screen.gd" id="1_2v3m5"]
-[ext_resource type="Texture2D" uid="uid://cxsctojfbiecw" path="res://Assets/sprites/target.png" id="2_i5bhb"]
+[ext_resource type="Texture2D" uid="uid://cxsctojfbiecw" path="res://assets/Sprites/target.png" id="2_i5bhb"]
+
 
 
 [node name="How_to_Play_screen" type="Node2D"]

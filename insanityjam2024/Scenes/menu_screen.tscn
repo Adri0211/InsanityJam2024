@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cm0lup1g2v533"]
 
 [ext_resource type="Script" path="res://scripts/menu_screen.gd" id="1_dqdj1"]
-[ext_resource type="Texture2D" uid="uid://dh7axn3jewhe7" path="res://assets/sprites/Linesweeper_logo_dark_big.png" id="2_5h5tx"]
+[ext_resource type="Texture2D" uid="uid://dh7axn3jewhe7" path="res://assets/Sprites/Linesweeper_logo_dark_big.png" id="2_5h5tx"]
 [ext_resource type="PackedScene" uid="uid://bu1u7u6pianaa" path="res://scenes/vol_slider.tscn" id="3_gnk0b"]
 
 [node name="MenuScreen" type="Node2D"]

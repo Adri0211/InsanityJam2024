@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bthnhe467qjfc"
-path="res://.godot/imported/Gameplay_Intense.png-e300182a124d6a22961411d95b7fc09e.ctex"
+path="res://.godot/imported/Gameplay_Intense.png-4f98e6dd9f15cfe19c11dc99fbeb4ebc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/screenies/Gameplay_Intense.png"
-dest_files=["res://.godot/imported/Gameplay_Intense.png-e300182a124d6a22961411d95b7fc09e.ctex"]
+source_file="res://assets/Sprites/screenies/Gameplay_Intense.png"
+dest_files=["res://.godot/imported/Gameplay_Intense.png-4f98e6dd9f15cfe19c11dc99fbeb4ebc.ctex"]
 
 [params]
 
