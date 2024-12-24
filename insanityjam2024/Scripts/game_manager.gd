@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	
 	# Add points
 	if arrow.gaining:
-		points += delta * arrow.position.distance_to(get_viewport().get_mouse_position()-get_viewport().get_visible_rect().size/2)*2 / 100
+		points += delta * arrow.position.distance_to(camera_2d.get_viewport().get_mouse_position()-camera_2d.get_viewport().get_visible_rect().size/2)*2 / 100
 		points_label.text = String.num(roundf(points*10)*10)
 
 func _spawn_obstacle(position: Vector2) -> void:
